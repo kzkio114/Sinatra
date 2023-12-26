@@ -1,0 +1,11 @@
+<h1><%= item %>について</h1>
+<form method="post" action="/details/<%= item %>">
+  <p><%= question %></p>
+  <input type="radio" id="yes" name="user_answer" value="はい">
+  <label for="yes">はい</label><br>
+  <input type="radio" id="no" name="user_answer" value="いいえ">
+  <label for="no">いいえ</label><br>
+  <input type="submit" value="送信">
+</form>
+<br>
+<a href="/">戻る</a>

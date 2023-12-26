@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>kzkio(かずちゃん)のプロフィール</title>
+  <style>
+    .profile-header {
+      margin-bottom: 35px; /* 下に50pxの空間を作る */
+    }
+    .space {
+      margin-top: 35px; /* 上に50pxの空間を作る */
+    }
+  </style>
+</head>
+<body>
+  <h1 class="profile-header">kzkio(かずちゃん)のプロフィール</h1>
+  <ul>
+    <% profile.each do |key, value| %>
+      <li><a href="/details/<%= key %>"><%= key %>: <%= value %></a></li>
+    <% end %>
+  </ul>
+  <div class="space"></div>
+  <h1 class="colorful-text">現在のアイコン</h1>
+  <img src="images/Discord.png" alt="Discordのアイコン">
+  <img src="images/photo1.jpg" alt="Xのアイコン">
+  <h1 class="colorful-text">とりあえず、見ていただきありがとうございます！！！</h1>
+  
+
+  <script>
+   // 色の配列を定義します。この例では5つの色が含まれています。
+    const colors = ['red', 'orange', 'yellow', 'green', 'blue'];
+    // HTML内の特定の要素を取得します。この例では、idが'colorful-text'の要素です。
+    const textElements = document.getElementsByClassName('colorful-text');
+     // 取得した要素のテキスト内容を取得します。
+    for (const textElement of textElements) {
+    const text = textElement.textContent;
+    // 最終的に生成されるカラフルなテキストを格納する変数を初期化します。
+    let coloredText = '';
+    // テキストの各文字に対してループを行います。
+    for (let i = 0; i < text.length; i++) {
+      // それぞれの文字に対して、色を順番に適用します。
+      // colors配列のインデックスには、i % colors.lengthを使用しています。
+      // これにより、色の配列の範囲を超えないようにしています。
+      coloredText += `<span style="color: ${colors[i % colors.length]};">${text[i]}</span>`;
+    }
+    // 最終的に作成されたカラフルなテキストを、元の要素のinnerHTMLとして設定します。
+    // これにより、元のテキストがカラフルなテキストに置き換わります。
+
+    textElement.innerHTML = coloredText;
+    }
+  </script>
+</body>
+</html>

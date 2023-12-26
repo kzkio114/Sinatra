@@ -1,0 +1,8 @@
+<h1>どちらについて知りたいですか？</h1>
+<ul>
+  <% reptile_details.keys.each do |reptile| %>
+    <li><a href="/reptile/<%= reptile %>"><%= reptile %></a></li>
+  <% end %>
+</ul>
+<br>
+<a href="/">戻る</a>
